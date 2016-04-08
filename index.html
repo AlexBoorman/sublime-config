@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sublime 3 Configuration by AlexBoorman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Sublime 3 Configuration</h1>
+      <h2 class="project-tagline">sublime setup guide</h2>
+      <a href="https://github.com/AlexBoorman/sublime-config" class="btn">View on GitHub</a>
+      <a href="https://github.com/AlexBoorman/sublime-config/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/AlexBoorman/sublime-config/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="sublime-text-3-configuration" class="anchor" href="#sublime-text-3-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sublime Text 3 Configuration</h1>
+
+<h2>
+<a id="requisites" class="anchor" href="#requisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requisites</h2>
+
+<ul>
+<li><p>Package Control <br>
+<a href="https://packagecontrol.io/">http://packagecontrol.io</a></p></li>
+<li><p>NodeJS <br>
+<a href="https://nodejs.org/en/">http://nodejs.org</a></p></li>
+<li><p>Homebrew <br>
+<a href="http://brew.sh">http://brew.sh</a></p></li>
+<li><p>Composer <br>
+<a href="https://getcomposer.org/download/">http://getcomposer.org</a></p></li>
+<li><p>PHP 5.4.4+ <br>
+<a href="http://php.net/">http://php.net</a></p></li>
+<li><p>MySQL 5.5.37+ <br>
+<a href="http://dev.mysql.com/doc/refman/5.5/en/">http://dev.mysql.com</a></p></li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="terminal-use" class="anchor" href="#terminal-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Terminal Use</h2>
+
+<pre><code>CREATE sublime SYMLINK OR ALIAS FOR THE TERMINAL
+</code></pre>
+
+<p><br>
+<strong>SymLink:</strong></p>
+
+<pre><code>sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/bin/sublime
+</code></pre>
+
+<p><br>
+<strong>Alias:</strong> <code>~/.bash_profile</code></p>
+
+<pre><code>alias sublime='open -a "Sublime Text"'
+</code></pre>
+
+<hr>
+
+<h2>
+<a id="package-control" class="anchor" href="#package-control" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Package Control</h2>
+
+<p><a href="https://packagecontrol.io/">http://packagecontrol.io</a></p>
+
+<p><code>Paste into the console and hit return</code></p>
+
+<pre><code>import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+</code></pre>
+
+<hr>
+
+<h2>
+<a id="core-packages" class="anchor" href="#core-packages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Core Packages</h2>
+
+<pre><code>Emmet
+SideBarEnhancements
+BracketHighlighter
+SublimeCodeIntel
+Alignment
+Modific
+ColorPicker
+HTML-CSS-JS Prettify
+Color Highlighter
+Style Sorter
+TrailingSpaces
+AutoPrefixer
+ChangeQuotes
+
+EditorConfig -  http://editorconfig.org
+Function Name Display
+Date Formatter
+DocBlockr
+Inc-Dec-Value
+phpfmt
+Markdown Preview
+</code></pre>
+
+<h3>
+<a id="emmet--docs---cheatsheet" class="anchor" href="#emmet--docs---cheatsheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Emmet / <a href="http://docs.emmet.io/">Docs</a> - <a href="http://docs.emmet.io/cheat-sheet/">CheatSheet</a>
+</h3>
+
+<pre><code>Speeds up HTML &amp; CSS workflow with text expansion, regex, snippets and tab completion
+</code></pre>
+
+<h3>
+<a id="sidebarenhancements" class="anchor" href="#sidebarenhancements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SideBarEnhancements</h3>
+
+<pre><code>Enhancements to the sidebar, files and folders
+</code></pre>
+
+<h3>
+<a id="brackethighlighter" class="anchor" href="#brackethighlighter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BracketHighlighter</h3>
+
+<pre><code>Bracket and tag highlighter for Sublime Text
+</code></pre>
+
+<h3>
+<a id="sublimecodeintel--docs" class="anchor" href="#sublimecodeintel--docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeCodeIntel / <a href="http://sublimecodeintel.github.io/SublimeCodeIntel/">Docs</a>
+</h3>
+
+<pre><code>Full-featured code intelligence and smart autocomplete engine
+</code></pre>
+
+<h3>
+<a id="alignment" class="anchor" href="#alignment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Alignment</h3>
+
+<pre><code>Easy alignment of multiple selections and multi-line selections
+</code></pre>
+
+<p>MAC</p>
+
+<pre><code>⌘ + ^ + a
+</code></pre>
+
+<p>LINUX</p>
+
+<pre><code>ctrl + alt + a
+</code></pre>
+
+<h3>
+<a id="modific--docs" class="anchor" href="#modific--docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modific / <a href="https://packagecontrol.io/packages/Modific">Docs</a>
+</h3>
+
+<pre><code>Highlight lines changed since the last commit (supports Git, SVN, Bazaar, Mercurial and TFS) / ST2(3) plugin.
+</code></pre>
+
+<p><strong>SHOW DIFF</strong></p>
+
+<pre><code>ctrl + alt + d  
+</code></pre>
+
+<p><strong>PREVIEW COMMIT FOR CURRENT LINE</strong></p>
+
+<h3>
+<a id="colorpicker--docs" class="anchor" href="#colorpicker--docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ColorPicker / <a href="https://packagecontrol.io/packages/ColorPicker">Docs</a>
+</h3>
+
+<pre><code>Use OS native color picker in Sublime Text
+</code></pre>
+
+<p>MAC</p>
+
+<pre><code>⌘ + shift + c
+</code></pre>
+
+<p>LINUX / WINDOWS</p>
+
+<pre><code>ctrl + shift + c
+</code></pre>
+
+<h3>
+<a id="html-css-js-prettify---docs" class="anchor" href="#html-css-js-prettify---docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML-CSS-JS Prettify /  <a href="https://github.com/victorporof/Sublime-HTMLPrettify">Docs</a>
+</h3>
+
+<p><code>REQUIRES NODE.JS &amp; JS-BEAUTIFY</code></p>
+
+<pre><code>Runs prettify on HTML, CSS, JS &amp; JSON
+</code></pre>
+
+<p><strong>BEAUTIFY OPEN FILE OR SELECTION</strong></p>
+
+<p>MAC</p>
+
+<pre><code>⌘ + shift + h
+</code></pre>
+
+<p>LINUX</p>
+
+<pre><code>ctrl + shift + h
+</code></pre>
+
+<p><strong>BEAUTIFY ON SAVE</strong></p>
+
+<ol>
+<li><p>Open the command palette</p></li>
+<li><p>Type <code>htmlprettify</code></p></li>
+<li><p>Select <code>Plugin Options</code></p></li>
+<li><p>Set <code>format_on_save</code> to <code>true</code></p></li>
+</ol>
+
+<h3>
+<a id="color-highlighter" class="anchor" href="#color-highlighter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Color Highlighter</h3>
+
+<pre><code>Highlights inline colors (HEX, RGBA) with their actual color
+</code></pre>
+
+<h3>
+<a id="style-sorter" class="anchor" href="#style-sorter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Style Sorter</h3>
+
+<pre><code>Auto sorts CSS style properties uniformly
+</code></pre>
+
+<h3>
+<a id="trailingspaces" class="anchor" href="#trailingspaces" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TrailingSpaces</h3>
+
+<pre><code>Purges page of trailing spaces, which can cause JS errors, on save
+</code></pre>
+
+<h3>
+<a id="autoprefixer" class="anchor" href="#autoprefixer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AutoPrefixer</h3>
+
+<p><code>REQUIRES NODE.JS</code></p>
+
+<pre><code>Sublime plugin to  add vendor prefixes to your CSS
+</code></pre>
+
+<h3>
+<a id="changequotes" class="anchor" href="#changequotes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ChangeQuotes</h3>
+
+<pre><code>Converts single to double / double to single quotes, preserves escaping
+</code></pre>
+
+<h2>
+<a id="sublimelinter-3--docs" class="anchor" href="#sublimelinter-3--docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter 3 / <a href="http://www.sublimelinter.com/en/latest/">Docs</a>
+</h2>
+
+<p>Interactive code linting framework for Sublime Text 3</p>
+
+<h3>
+<a id="sublimelinter-php" class="anchor" href="#sublimelinter-php" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-php</h3>
+
+<pre><code>PHP linter using php-l
+</code></pre>
+
+<h3>
+<a id="sublimelinter-phplint--docs---site" class="anchor" href="#sublimelinter-phplint--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-phplint / <a href="https://packagecontrol.io/packages/SublimeLinter-phplint">Docs</a> - <a href="http://www.icosaedro.it/phplint/index.html">Site</a>
+</h3>
+
+<pre><code>PHP linter using phplint
+</code></pre>
+
+<p><strong>MAC</strong> </p>
+
+<pre><code>brew install homebrew/php/phplint
+</code></pre>
+
+<h3>
+<a id="sublimelinter-phpmd--docs---site" class="anchor" href="#sublimelinter-phpmd--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-phpmd / <a href="https://packagecontrol.io/packages/SublimeLinter-phpmd">Docs</a> - <a href="https://phpmd.org/documentation/index.html">Site</a>
+</h3>
+
+<pre><code>PHP linter using phpmd
+</code></pre>
+
+<h3>
+<a id="sublimelinter-phpcs--docs---site" class="anchor" href="#sublimelinter-phpcs--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-phpcs / <a href="https://packagecontrol.io/packages/SublimeLinter-phpcs">Docs</a> - <a href="http://pear.php.net/package/PHP_CodeSniffer/">Site</a>
+</h3>
+
+<pre><code>PHP linter using phpcs
+</code></pre>
+
+<h3>
+<a id="sublimelinter-jshint--docs---site" class="anchor" href="#sublimelinter-jshint--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-jshint / <a href="https://packagecontrol.io/packages/SublimeLinter-jshint">Docs</a> - <a href="http://www.jshint.com/docs/">Site</a>
+</h3>
+
+<pre><code>JS linter using jshint
+</code></pre>
+
+<p><br>
+<strong>INSTALL WITH NPM</strong> </p>
+
+<pre><code>npm install -g jshint
+</code></pre>
+
+<h3>
+<a id="sublimelinter-json--docs" class="anchor" href="#sublimelinter-json--docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-json / <a href="https://packagecontrol.io/packages/SublimeLinter-json">Docs</a>
+</h3>
+
+<pre><code>JSON linter using Sublime Text's JSON Parser
+</code></pre>
+
+<h3>
+<a id="sublimelinter-csslint--docs---site" class="anchor" href="#sublimelinter-csslint--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-csslint / <a href="https://packagecontrol.io/packages/SublimeLinter-csslint">Docs</a> - <a href="https://github.com/stubbornella/csslint/wiki">Site</a>
+</h3>
+
+<pre><code>CSS linter using csslint
+</code></pre>
+
+<p><strong>INSTALL WITH NPM</strong> </p>
+
+<pre><code>npm install -g csslint
+</code></pre>
+
+<h3>
+<a id="sublimelinter-html-tidy--docs---site" class="anchor" href="#sublimelinter-html-tidy--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SublimeLinter-html-tidy / <a href="https://packagecontrol.io/packages/SublimeLinter-html-tidy">Docs</a> - <a href="http://www.html-tidy.org/">Site</a>
+</h3>
+
+<pre><code>HTML linter using html-tidy (html4 or html5)
+</code></pre>
+
+<p><strong>MAC</strong> </p>
+
+<pre><code>    brew install tidy-html5
+</code></pre>
+
+<p><strong>LINUX</strong> (HTML5 REQUIRES BUILD)</p>
+
+<pre><code>apt-get install tidy
+</code></pre>
+
+<p><strong>WINDOWS</strong></p>
+
+<pre><code>Windows binaries are available for both html4 and html5
+</code></pre>
+
+<h3>
+<a id="phpfmt--docs---site" class="anchor" href="#phpfmt--docs---site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>phpfmt / <a href="https://packagecontrol.io/packages/phpfmt/">Docs</a> - <a href="https://github.com/phpfmt/fmt">Site</a>
+</h3>
+
+<pre><code>PSR1/PSR2 PHP Code Formatter
+</code></pre>
+
+<h3>
+<a id="languages-snippets--bundles" class="anchor" href="#languages-snippets--bundles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Languages, Snippets &amp; Bundles</h3>
+
+<pre><code>HTML5
+CSS3
+IconFont
+MarkDown Editing
+Markdown Extended
+php-snippets
+Bootstrap 3
+Bootstrap 3 Snippets
+Jade
+Haml
+GenericConfig
+Nginx
+ApacheConf.tmLanguage
+Babel
+Better CoffeeScript
+Dockerfile Syntax Highlighting
+Dotfiles Syntax Highlighting
+Hosts
+PHP MySQLi Connection
+jQuery
+JQuery Snippets
+SASS
+LESS
+Emmet CSS Snippets
+Comment Snippets
+</code></pre>
+
+<h3>
+<a id="color-schemes--themes" class="anchor" href="#color-schemes--themes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Color Schemes &amp; Themes</h3>
+
+<pre><code>Monokai Extended
+MonokaiJSON+
+Monokai Neue
+Materialize
+Spacegray
+</code></pre>
+
+<h3>
+<a id="user-settings-configuration" class="anchor" href="#user-settings-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User Settings Configuration</h3>
+
+<pre><code>{
+"bold_folder_labels": true,
+"color_scheme": "Packages/Monokai Extended/Monokai Extended Light.tmTheme",
+"font_face": "Droid Sans Mono",
+"font_options": "subpixel_antialias",
+"font_size": 13,
+"highlight_line": true,
+"highlight_modified_tabs": true,
+"ignored_packages":
+[
+    "Vintage"
+],
+"line_padding_bottom": 1,
+"line_padding_top": 1,
+"rulers":
+[
+    80
+],
+"scroll_past_end": true,
+"tab_size": 4,
+"translate_tabs_to_spaces": true,
+"trim_trailing_white_space_on_save": true,
+"word_wrap": true
+}
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/AlexBoorman/sublime-config">Sublime 3 Configuration</a> is maintained by <a href="https://github.com/AlexBoorman">AlexBoorman</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
