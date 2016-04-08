@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Sublime Text Setup Guide">
+    <meta name="author" content="Alex Boorman">
+    <title>Markable.in</title>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-gclp-initialized="true" data-gistbox-initialized="true">
+    <div class="container">
+        <h1>Sublime Text 3 Configuration</h1>
+        <div id="content">
+            <h2 id="requisites">Requisites</h2>
+            <ul>
+                <li>
+                    <p>Package Control
+                        <br>
+                        <a href="https://packagecontrol.io/">http://packagecontrol.io</a></p>
+                </li>
+                <li>
+                    <p>NodeJS
+                        <br>
+                        <a href="https://nodejs.org/en/">http://nodejs.org</a></p>
+                </li>
+                <li>
+                    <p>Homebrew
+                        <br>
+                        <a href="http://brew.sh/">http://brew.sh</a></p>
+                </li>
+                <li>
+                    <p>Composer
+                        <br>
+                        <a href="https://getcomposer.org/download/">http://getcomposer.org</a></p>
+                </li>
+                <li>
+                    <p>PHP 5.4.4+
+                        <br>
+                        <a href="http://php.net/">http://php.net</a></p>
+                </li>
+                <li>
+                    <p>MySQL 5.5.37+
+                        <br>
+                        <a href="http://dev.mysql.com/doc/refman/5.5/en/">http://dev.mysql.com</a></p>
+                </li>
+            </ul>
+            <hr>
+            <h2 id="terminal-use">Terminal Use</h2>
+            <pre data-initialized="true" data-gclp-id="0"><code>CREATE sublime SYMLINK OR ALIAS FOR THE TERMINAL
+</code></pre>
+            <p>
+                <br>
+                <strong>SymLink:</strong></p>
+            <pre data-initialized="true" data-gclp-id="1"><code>sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/bin/sublime
+</code></pre>
+            <p>
+                <br>
+                <strong>Alias:</strong> <code>~/.bash_profile</code></p>
+            <pre data-initialized="true" data-gclp-id="2"><code>alias sublime='open -a "Sublime Text"'
+</code></pre>
+            <hr>
+            <h2 id="package-control">Package Control</h2>
+            <p><a href="https://packagecontrol.io/">http://packagecontrol.io</a></p>
+            <p><code>Paste into the console and hit return</code></p>
+            <pre data-initialized="true" data-gclp-id="3"><code>import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+</code></pre>
+            <hr>
+            <h2 id="core-packages">Core Packages</h2>
+            <pre data-initialized="true" data-gclp-id="4"><code>Emmet
+SideBarEnhancements
+BracketHighlighter
+SublimeCodeIntel
+Alignment
+Modific
+ColorPicker
+HTML-CSS-JS Prettify
+Color Highlighter
+Style Sorter
+TrailingSpaces
+AutoPrefixer
+ChangeQuotes
+
+EditorConfig -  http://editorconfig.org
+Function Name Display
+Date Formatter
+DocBlockr
+Inc-Dec-Value
+phpfmt
+Markdown Preview
+</code></pre>
+            <h3 id="emmet-docs-cheatsheet">Emmet / <a href="http://docs.emmet.io/">Docs</a> - <a href="http://docs.emmet.io/cheat-sheet/">CheatSheet</a></h3>
+            <pre data-initialized="true" data-gclp-id="5"><code>Speeds up HTML &amp; CSS workflow with text expansion, regex, snippets and tab completion
+</code></pre>
+            <h3 id="sidebarenhancements">SideBarEnhancements</h3>
+            <pre data-initialized="true" data-gclp-id="6"><code>Enhancements to the sidebar, files and folders
+</code></pre>
+            <h3 id="brackethighlighter">BracketHighlighter</h3>
+            <pre data-initialized="true" data-gclp-id="7"><code>Bracket and tag highlighter for Sublime Text
+</code></pre>
+            <h3 id="sublimecodeintel-docs">SublimeCodeIntel / <a href="http://sublimecodeintel.github.io/SublimeCodeIntel/">Docs</a></h3>
+            <pre data-initialized="true" data-gclp-id="8"><code>Full-featured code intelligence and smart autocomplete engine
+</code></pre>
+            <h3 id="alignment">Alignment</h3>
+            <pre data-initialized="true" data-gclp-id="9"><code>Easy alignment of multiple selections and multi-line selections
+</code></pre>
+            <p>MAC</p>
+            <pre data-initialized="true" data-gclp-id="10"><code>⌘ + ^ + a
+</code></pre>
+            <p>LINUX</p>
+            <pre data-initialized="true" data-gclp-id="11"><code>ctrl + alt + a
+</code></pre>
+            <h3 id="modific-docs">Modific / <a href="https://packagecontrol.io/packages/Modific">Docs</a></h3>
+            <pre data-initialized="true" data-gclp-id="12"><code>Highlight lines changed since the last commit (supports Git, SVN, Bazaar, Mercurial and TFS) / ST2(3) plugin.
+</code></pre>
+            <p><strong>SHOW DIFF</strong></p>
+            <pre data-initialized="true" data-gclp-id="13"><code>ctrl + alt + d
+</code></pre>
+            <p><strong>PREVIEW COMMIT FOR CURRENT LINE</strong></p>
+            <h3 id="colorpicker-docs">ColorPicker / <a href="https://packagecontrol.io/packages/ColorPicker">Docs</a></h3>
+            <pre data-initialized="true" data-gclp-id="14"><code>Use OS native color picker in Sublime Text
+</code></pre>
+            <p>MAC</p>
+            <pre data-initialized="true" data-gclp-id="15"><code>⌘ + shift + c
+</code></pre>
+            <p>LINUX / WINDOWS</p>
+            <pre data-initialized="true" data-gclp-id="16"><code>ctrl + shift + c
+</code></pre>
+            <h3 id="html-css-js-prettify-docs">HTML-CSS-JS Prettify /  <a href="https://github.com/victorporof/Sublime-HTMLPrettify">Docs</a></h3>
+            <p><code>REQUIRES NODE.JS &amp; JS-BEAUTIFY</code></p>
+            <pre data-initialized="true" data-gclp-id="17"><code>Runs prettify on HTML, CSS, JS &amp; JSON
+</code></pre>
+            <p><strong>BEAUTIFY OPEN FILE OR SELECTION</strong></p>
+            <p>MAC</p>
+            <pre data-initialized="true" data-gclp-id="18"><code>⌘ + shift + h
+</code></pre>
+            <p>LINUX</p>
+            <pre data-initialized="true" data-gclp-id="19"><code>ctrl + shift + h
+</code></pre>
+            <p><strong>BEAUTIFY ON SAVE</strong></p>
+            <ol>
+                <li>
+                    <p>Open the command palette</p>
+                </li>
+                <li>
+                    <p>Type <code>htmlprettify</code></p>
+                </li>
+                <li>
+                    <p>Select <code>Plugin Options</code></p>
+                </li>
+                <li>
+                    <p>Set <code>format_on_save</code> to <code>true</code></p>
+                </li>
+            </ol>
+            <h3 id="color-highlighter">Color Highlighter</h3>
+            <pre data-initialized="true" data-gclp-id="20"><code>Highlights inline colors (HEX, RGBA) with their actual color
+</code></pre>
+            <h3 id="style-sorter">Style Sorter</h3>
+            <pre data-initialized="true" data-gclp-id="21"><code>Auto sorts CSS style properties uniformly
+</code></pre>
+            <h3 id="trailingspaces">TrailingSpaces</h3>
+            <pre data-initialized="true" data-gclp-id="22"><code>Purges page of trailing spaces, which can cause JS errors, on save
+</code></pre>
+            <h3 id="autoprefixer">AutoPrefixer</h3>
+            <p><code>REQUIRES NODE.JS</code></p>
+            <pre data-initialized="true" data-gclp-id="23"><code>Sublime plugin to  add vendor prefixes to your CSS
+</code></pre>
+            <h3 id="changequotes">ChangeQuotes</h3>
+            <pre data-initialized="true" data-gclp-id="24"><code>Converts single to double / double to single quotes, preserves escaping
+</code></pre>
+            <h2 id="sublimelinter-3-docs">SublimeLinter 3 / <a href="http://www.sublimelinter.com/en/latest/">Docs</a></h2>
+            <p>Interactive code linting framework for Sublime Text 3</p>
+            <h3 id="sublimelinter-php">SublimeLinter-php</h3>
+            <pre data-initialized="true" data-gclp-id="25"><code>PHP linter using php-l
+</code></pre>
+            <h3 id="sublimelinter-phplint-docs-site">SublimeLinter-phplint / <a href="https://packagecontrol.io/packages/SublimeLinter-phplint">Docs</a> - <a href="http://www.icosaedro.it/phplint/index.html">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="26"><code>PHP linter using phplint
+</code></pre>
+            <p><strong>MAC</strong> </p>
+            <pre data-initialized="true" data-gclp-id="27"><code>brew install homebrew/php/phplint
+</code></pre>
+            <h3 id="sublimelinter-phpmd-docs-site">SublimeLinter-phpmd / <a href="https://packagecontrol.io/packages/SublimeLinter-phpmd">Docs</a> - <a href="https://phpmd.org/documentation/index.html">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="28"><code>PHP linter using phpmd
+</code></pre>
+            <h3 id="sublimelinter-phpcs-docs-site">SublimeLinter-phpcs / <a href="https://packagecontrol.io/packages/SublimeLinter-phpcs">Docs</a> - <a href="http://pear.php.net/package/PHP_CodeSniffer/">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="29"><code>PHP linter using phpcs
+</code></pre>
+            <h3 id="sublimelinter-jshint-docs-site">SublimeLinter-jshint / <a href="https://packagecontrol.io/packages/SublimeLinter-jshint">Docs</a> - <a href="http://www.jshint.com/docs/">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="30"><code>JS linter using jshint
+</code></pre>
+            <p>
+                <br>
+                <strong>INSTALL WITH NPM</strong> </p>
+            <pre data-initialized="true" data-gclp-id="31"><code>npm install -g jshint
+</code></pre>
+            <h3 id="sublimelinter-json-docs">SublimeLinter-json / <a href="https://packagecontrol.io/packages/SublimeLinter-json">Docs</a></h3>
+            <pre data-initialized="true" data-gclp-id="32"><code>JSON linter using Sublime Text's JSON Parser
+</code></pre>
+            <h3 id="sublimelinter-csslint-docs-site">SublimeLinter-csslint / <a href="https://packagecontrol.io/packages/SublimeLinter-csslint">Docs</a> - <a href="https://github.com/stubbornella/csslint/wiki">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="33"><code>CSS linter using csslint
+</code></pre>
+            <p><strong>INSTALL WITH NPM</strong> </p>
+            <pre data-initialized="true" data-gclp-id="34"><code>npm install -g csslint
+</code></pre>
+            <h3 id="sublimelinter-html-tidy-docs-site">SublimeLinter-html-tidy / <a href="https://packagecontrol.io/packages/SublimeLinter-html-tidy">Docs</a> - <a href="http://www.html-tidy.org/">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="35"><code>HTML linter using html-tidy (html4 or html5)
+</code></pre>
+            <p><strong>MAC</strong> </p>
+            <pre data-initialized="true" data-gclp-id="36"><code>    brew install tidy-html5
+</code></pre>
+            <p><strong>LINUX</strong> (HTML5 REQUIRES BUILD)</p>
+            <pre data-initialized="true" data-gclp-id="37"><code>apt-get install tidy
+</code></pre>
+            <p><strong>WINDOWS</strong></p>
+            <pre data-initialized="true" data-gclp-id="38"><code>Windows binaries are available for both html4 and html5
+</code></pre>
+            <h3 id="phpfmt-docs-site">phpfmt / <a href="https://packagecontrol.io/packages/phpfmt/">Docs</a> - <a href="https://github.com/phpfmt/fmt">Site</a></h3>
+            <pre data-initialized="true" data-gclp-id="39"><code>PSR1/PSR2 PHP Code Formatter
+</code></pre>
+            <h3 id="languages-snippets-bundles">Languages, Snippets &amp; Bundles</h3>
+            <pre data-initialized="true" data-gclp-id="40"><code>HTML5
+CSS3
+IconFont
+MarkDown Editing
+Markdown Extended
+php-snippets
+Bootstrap 3
+Bootstrap 3 Snippets
+Jade
+Haml
+GenericConfig
+Nginx
+ApacheConf.tmLanguage
+Babel
+Better CoffeeScript
+Dockerfile Syntax Highlighting
+Dotfiles Syntax Highlighting
+Hosts
+PHP MySQLi Connection
+jQuery
+JQuery Snippets
+SASS
+LESS
+Emmet CSS Snippets
+Comment Snippets
+</code></pre>
+            <h3 id="color-schemes-themes">Color Schemes &amp; Themes</h3>
+            <pre data-initialized="true" data-gclp-id="41"><code>Monokai Extended
+MonokaiJSON+
+Monokai Neue
+Materialize
+Spacegray
+</code></pre>
+            <h3 id="user-settings-configuration">User Settings Configuration</h3>
+            <pre data-initialized="true" data-gclp-id="42"><code>{
+"bold_folder_labels": true,
+"color_scheme": "Packages/Monokai Extended/Monokai Extended Light.tmTheme",
+"font_face": "Droid Sans Mono",
+"font_options": "subpixel_antialias",
+"font_size": 13,
+"highlight_line": true,
+"highlight_modified_tabs": true,
+"ignored_packages":
+[
+    "Vintage"
+],
+"line_padding_bottom": 1,
+"line_padding_top": 1,
+"rulers":
+[
+    80
+],
+"scroll_past_end": true,
+"tab_size": 4,
+"translate_tabs_to_spaces": true,
+"trim_trailing_white_space_on_save": true,
+"word_wrap": true
+}
+</code></pre>
+        </div>
+    </div>
+    <section style="margin-top: 70px;"></section>
+    <hr>
+    <footer>
+        <p class="text-center"><i style="font-size: 12px;">Compiled by</i> <a href="http://www.squidtacos.com/"><strong>Alex Boorman</strong></a> </p>
+    </footer>
+    <script src="assets/js/jquery.1.11.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/utils.js"></script>
+
+</body>
+
+</html>
